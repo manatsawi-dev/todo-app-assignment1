@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoScreen from "./screens/todo";
+import { GlobalStyle } from "./styles/global-style";
+import { theme } from "./styles/theme";
+import { ThemeProvider } from "styled-components";
+// import TestScreen from "./screens/test-screen";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <TodoScreen />
+      {/* <TestScreen /> */}
+    </ThemeProvider>
   );
 }
 
